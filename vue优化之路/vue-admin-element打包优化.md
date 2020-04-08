@@ -69,6 +69,12 @@ npm install compression-webpack-plugin -D
 打开`vue.config.js` 文件找到 configureWebpack
 
 ```js
+// 导入compression-webpack-plugin
+const CompressionWebpackPlugin = require('compression-webpack-plugin')
+// 定义压缩文件类型
+const productionGzipExtensions = ['js', 'css']
+
+
 /**********  配置参数详解  *******/
 # asset： 目标资源名称。 [file] 会被替换成原始资源。[path] 会被替换成原始资源的路径， [query] 会被替换成查询字符串。默认值是 "[path].gz[query]"。
 # algorithm： 可以是 function(buf, callback) 或者字符串。对于字符串来说依照 zlib 的算法(或者 zopfli 的算法)。默认值是 "gzip"。
